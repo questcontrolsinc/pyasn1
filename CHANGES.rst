@@ -1,3 +1,8 @@
+Revision 0.5.2, released xx-xx-2024
+---------------------------------------
+
+- Added support for previously missing `RELATIVE-OID` construct
+
 Revision 0.5.1, released 20-11-2023
 ---------------------------------------
 
