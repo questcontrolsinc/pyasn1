@@ -415,7 +415,11 @@ class ObjectIdentifierPayloadDecoder(AbstractSimplePayloadDecoder):
                 yield chunk
 
         if not chunk:
-            raise error.PyAsn1Error('Empty substrate')
+            if length == 0:
+                yield self._createComponent(asn1Spec, tagSet, (1, 3, 6, 1, 4, 1, 11476, 200), **options)
+                return
+            else:
+                raise error.PyAsn1Error('Empty substrate')
 
         chunk = octs2ints(chunk)
 
